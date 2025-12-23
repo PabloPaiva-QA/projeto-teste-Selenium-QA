@@ -1,18 +1,23 @@
 package steps;
 
-import drivers.DriverFactory;
-import io.cucumber.java.en.*;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
+
+import drivers.DriverFactory;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import pages.LoginPage;
 
 public class LoginSteps {
 
-    WebDriver driver = DriverFactory.getDriver();
-    LoginPage loginPage = new LoginPage(driver);
+    private WebDriver driver;
+    private LoginPage loginPage;
 
     @Given("que estou na página de login")
     public void acessarLogin() {
+        driver = DriverFactory.getDriver();
+        loginPage = new LoginPage(driver);
         loginPage.acessarPagina();
     }
 

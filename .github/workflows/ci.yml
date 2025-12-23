@@ -12,8 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         browser: [chrome, firefox, edge]
+
 
     steps:
       - name: Checkout do código
